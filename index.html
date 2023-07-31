@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Botostart</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <div class="clock"></div>
+  <script src="./main.js"></script>
+
+
+
+
+  <script>
+
+
+    function timeWatch() {
+      let time = new Date();
+
+      let H = time.getHours();
+      let M = time.getMinutes();
+      let S = time.getSeconds();
+      let session = "AM"
+
+
+      if (H === 0) {
+        H = 12
+      }
+
+      if (H > 12) {
+        H -= 12
+        session = "PM"
+      }
+
+      H = (H < 10) ? `0${H}` : H
+      M = (M < 10) ? `0${M}` : M
+      S = (S < 10) ? `0${S}` : S
+
+
+      document.querySelector(".clock").innerText = ` ${H}:${M}:${S}  ${session} `
+
+    }
+    setInterval(timeWatch, 1000);
+
+
+
+
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
